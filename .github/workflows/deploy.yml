@@ -106,8 +106,8 @@ jobs:
       name: Deploy website
       with:
         app-name: ${{ needs.deploy.outputs.appServiceName }}
-        package: ./src/ToyCompany/ToyCompany.Website/bin/Release/net8.0/publish/publish.zip
-       
+        package: website
+
   smoke-test:
     runs-on: ubuntu-latest
     needs: deploy
