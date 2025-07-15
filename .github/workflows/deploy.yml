@@ -144,9 +144,9 @@ jobs:
       name: Deploy DACPAC to database
       with:
         server-name: ${{ needs.deploy.outputs.sqlServerFullyQualifiedDomainName }}
-        connection-string: ${{ format('server={0}; Initial Catalog ={1}; User Id={2};Password{3}', needs.deploy.outputs.sqlServerFullyQualifiedDomainName, needs.deploy.outputs.sqlDatabaseName, inputs.sqlServerAdministratorLogin, secrets.sqlServerAdministratorLoginPassword) }}
+        connection-string: ${{ format('server={0}; Initial Catalog={1}; User Id={2};Password={3};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30', needs.deploy.outputs.sqlServerFullyQualifiedDomainName, needs.deploy.outputs.sqlDatabaseName, inputs.sqlServerAdministratorLogin, secrets.sqlServerAdministratorLoginPassword) }}
         dacpac-package: database/ToyCompany.Database.dacpac
-        
+
   seed-database:
     needs: 
       - deploy
