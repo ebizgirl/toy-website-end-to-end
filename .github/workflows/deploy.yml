@@ -111,7 +111,7 @@ jobs:
       name: Deploy website
       with:
         app-name: ${{ needs.deploy.outputs.appServiceName }}
-        package: website/website.zip
+        package: website.zip
 
   smoke-test:
     runs-on: ubuntu-latest
