@@ -32,7 +32,7 @@ var appServicePlanName = 'toy-website'
 var logAnalyticsWorkspaceName = 'workspace-${resourceNameSuffix}'
 var applicationInsightsName = 'toywebsite'
 var storageAccountName = 'mystorage${resourceNameSuffix}'
-var storageAcccountImageBlobContainerName = 'toyimages'
+var storageAccountImagesBlobContainerName = 'toyimages'
 var sqlServerName = 'toy-website-${resourceNameSuffix}'
 var sqlDatabaseName = 'Toys'
 
@@ -163,13 +163,12 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     name: 'default'
 
     resource storageAccountImagesBlobContainer 'containers' = {
-      name: storageAcccountImageBlobContainerName
-
+      name: storageAccountImagesBlobContainerName
       properties: {
         publicAccess: 'Blob'
       }
+    }
   }
-}
 }
 
 resource sqlServer 'Microsoft.Sql/servers@2024-05-01-preview' = {
