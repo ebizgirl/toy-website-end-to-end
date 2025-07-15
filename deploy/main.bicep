@@ -181,7 +181,7 @@ resource sqlServerFirewallRule 'Microsoft.Sql/servers/firewallRules@2024-05-01-p
   parent: sqlServer
   properties: {
     startIpAddress: '0.0.0.0'
-    endIpAddress: '0.0.0.'
+    endIpAddress: '0.0.0.0'
   }
 }
 
