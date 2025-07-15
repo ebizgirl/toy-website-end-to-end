@@ -38,7 +38,8 @@ var sqlDatabaseName = 'Toys'
 
 
 // Define the connection string to access Azure SQL.
-var sqlDatabaseConnectionString = 'Server=tcp:$(sqlServer.properties.fullyQualifiedDomainName),1433;Initial Catalog=${sqlDatabase.name};Persistent Security Info=False;UserID=${sqlServerAdministratorLogin};Password=${sqlServerAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+var sqlDatabaseConnectionString = 'Server=tcp:${sqlServer.properties.fullyQualifiedDomainName},1433;Initial Catalog=${sqlDatabase.name};Persistent Security Info=False;User ID=${sqlServerAdministratorLogin};Password=${sqlServerAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
