@@ -30,6 +30,10 @@ namespace ToyCompany.Website
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //  Log the SQL connection string to verify it's being read correctly
+            Console.WriteLine($"SQL CONN: {Configuration["SqlDatabaseConnectionString"]}");
+
             services.AddHealthChecks()
                 .AddSqlServer(Configuration["SqlDatabaseConnectionString"] ?? string.Empty);
 
