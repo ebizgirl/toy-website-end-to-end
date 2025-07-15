@@ -106,7 +106,7 @@ jobs:
       with: 
         name: website
     - name: List output folder
-      run:  ls -lhR website
+      run:  ls publish.zip
     - uses: azure/webapps-deploy@v2
       name: Deploy website
       with:
