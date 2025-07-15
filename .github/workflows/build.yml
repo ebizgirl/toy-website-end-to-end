@@ -23,7 +23,7 @@ jobs:
         - name: Zip publishable website
           run: |
             zip -r publish.zip .
-            working-directory: ./src/ToyCompany/ToyCompany.Website/bin/Release/netcoreapp3.1/publish
+          working-directory: ./src/ToyCompany/ToyCompany.Website/bin/Release/netcoreapp3.1/publish
 
         - name: Upload webstie as workflow artifact
           uses: actions/upload-artifact@v4
