@@ -28,3 +28,4 @@ jobs:
           with: 
             name: website
             path: ./src/ToyCompany/ToyCompany.Website/bin/Release/net8.0/publish/publish.zip
+            
