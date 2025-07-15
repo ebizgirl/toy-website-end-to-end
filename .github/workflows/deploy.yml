@@ -106,12 +106,12 @@ jobs:
       with: 
         name: website
     - name: List output folder
-      run: ls -R
+      run:  ls -lhR website
     - uses: azure/webapps-deploy@v2
       name: Deploy website
       with:
         app-name: ${{ needs.deploy.outputs.appServiceName }}
-        package: website.zip
+        package: publish.zip
 
   smoke-test:
     runs-on: ubuntu-latest
