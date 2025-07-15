@@ -162,7 +162,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
       name: storageAcccountImageBlobContainerName
 
       properties: {
-        publicAccess: 'Blob'
+        publicAccess: 'None'
       }
   }
 }
