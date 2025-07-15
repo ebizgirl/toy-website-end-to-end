@@ -102,15 +102,11 @@ jobs:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-    - uses: actions/download-artifact@v4
-      name: Download website artifact
-      with:
-        name: website
     - uses: azure/webapps-deploy@v2
       name: Deploy website
       with:
         app-name: ${{ needs.deploy.outputs.appServiceName }}
-        package: website/publish.zip
+        package: ./src/ToyCompany/ToyCompany.Website/bin/Release/net8.0/publish/publish.zip
        
   smoke-test:
     runs-on: ubuntu-latest
