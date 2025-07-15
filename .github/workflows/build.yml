@@ -13,16 +13,14 @@ jobs:
         - name: Install .NET Core
           uses: actions/setup-dotnet@v3
           with:
-            dotnet-version: 3.1 
+            dotnet-version: '3.1.x'
 
         - name: Build publishable application
-          run: |
-            dotnet publish --configuration Release
+          run: dotnet publish --configuration Release
           working-directory: src/ToyCompany/ToyCompany.Website
 
         - name: Zip publishable website
-          run: |
-            zip -r publish.zip .
+          run: zip -r publish.zip .
           working-directory: ./src/ToyCompany/ToyCompany.Website/bin/Release/netcoreapp3.1/publish
 
         - name: Upload webstie as workflow artifact
